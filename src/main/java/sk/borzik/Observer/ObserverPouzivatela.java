@@ -28,7 +28,7 @@ public class ObserverPouzivatela implements Pozorovatel {
     }
 
     @Override
-    public void aktualizuj(int vek, double rozpocet, String meno, String ulica, String typ, String password, ArrayList<destinacia> rezervacie, JTextPane text) {
+    public void aktualizuj(int vek, double rozpocet, String meno, String ulica, String typ, String password, ArrayList<destinacia> rezervacie, JTextArea text) {
         this.vek=vek;
         this.rozpocet=rozpocet;
         this.meno=meno;
@@ -40,7 +40,7 @@ public class ObserverPouzivatela implements Pozorovatel {
         printZmeny(rezervacie, text);
     }
 
-    public void printZmeny(ArrayList<destinacia> rezervacie, JTextPane text) {
+    public void printZmeny(ArrayList<destinacia> rezervacie, JTextArea text) {
         String rezorty = "";
 
         for (int i = 0; i < rezervacie.size(); i++) {

@@ -141,21 +141,25 @@ public class Admin extends pouzivatel implements autorita{
         }
     }
 
-    public void uprav_rezervaciu(String login, String destinacia){
+    public void uprav_budget(JTextField login, JTextField pridat_sumu) throws IOException {
+        pouzivatel pouzivatel=new pouzivatel(0,0,null,null,null,null,null);
+        String login_username = login.getText();
+        Double pridat_sumu_user=Double.parseDouble(pridat_sumu.getText());
+
+        try {
+            pouzivatel=pouzivatel.odserializuj(login_username);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        pouzivatel.setRozpocet(pouzivatel.getRozpocet()+pridat_sumu_user);
+
+        pouzivatel.serializuj(pouzivatel.getVek(),pouzivatel.getRozpocet(),pouzivatel.getMeno(),pouzivatel.getUlica(),pouzivatel.getTyp(),pouzivatel.getPassword(),pouzivatel.getRezervacie());
 
     }
 
-    public void pozri_requesty(JComboBox vyber) throws IOException, ClassNotFoundException {
-       ArrayList<Rezervacie> vsetky_rezervacie= new ArrayList<>();
-
-       vsetky_rezervacie=odserializuj_request();
-       if(vsetky_rezervacie==null){
-           return;
-       }
-       for(Rezervacie rezervacia:vsetky_rezervacie){
-           vyber.addItem(rezervacia.login+ "-->" + rezervacia.destinacia);
-       }
-    }
 
     public  void suhlas_vymazanie(JComboBox vyber, ArrayList<Rezervacie> vsetky_requesty){
         String[] split=vyber.getSelectedItem().toString().split("-->");

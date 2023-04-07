@@ -3,6 +3,7 @@ package sk.borzik.Destinacia;
 import sk.borzik.Pouzivatelia.pouzivatel;
 import sk.borzik.Vozidla.vozidla;
 
+import javax.swing.*;
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -142,5 +143,16 @@ public class destinacia implements Serializable {
 
         output.setText("Cena registrácie je : " + bd + "€" + "  |  BEZ ZĽAVY (ZĽAVA SA APLIKUJE AŽ PRI KÚPE)");          //vypíšeme cenu registrácie
     }
+
+    public void ohodnotit(){
+
+    }
+
+    public void vloz_rezervacie(JComboBox rezervacie_box, ArrayList<destinacia> finalVsetky_rezervacie){
+        for(int i = 0; i< finalVsetky_rezervacie.size(); i++){
+            rezervacie_box.addItem(finalVsetky_rezervacie.get(i).getNazov_rezortu());
+        }
+    }
+
 
 }

@@ -31,15 +31,13 @@ public class ZoberPouzivatela implements Predmet {
     }
 
     @Override
-
-
-    public void upozorniPozorovatelov(JTextPane textPane) {       //prechádzame všetkými observermi v ArrayListe a aktualizujeme ich hodnoty
+    public void upozorniPozorovatelov(JTextArea textPane) {       //prechádzame všetkými observermi v ArrayListe a aktualizujeme ich hodnoty
         for(Pozorovatel pozorovatel: pozorovatelia){
             pozorovatel.aktualizuj(vek, rozpocet, meno, ulica, typ, password, rezervacie, textPane);
         }
     }
 
-    public void nastavPouzivatela(int vek, double rozpocet, String meno, String ulica, String typ, String password, ArrayList<destinacia> rezervacie, JTextPane text){
+    public void nastavPouzivatela(int vek, double rozpocet, String meno, String ulica, String typ, String password, ArrayList<destinacia> rezervacie, JTextArea text){
         this.vek=vek;
         this.rozpocet=rozpocet;
         this.meno=meno;

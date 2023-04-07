@@ -14,6 +14,9 @@ public class Admin_menu extends JFrame {
     private JPanel panel1;
     private JComboBox moznosti;
     private JTextArea textField;
+    private JTextField login;
+    private JTextField pridat_sumu;
+    private JButton pridať€€€Button;
 
     public Admin_menu(String title) throws IOException, ClassNotFoundException {
         super(title);
@@ -63,6 +66,18 @@ public class Admin_menu extends JFrame {
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        pridať€€€Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Admin admin = new Admin(0,0,"","","","");
+                try {
+                    admin.uprav_budget(login, pridat_sumu);
+                } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
             }

@@ -1,5 +1,7 @@
 package sk.borzik.gui;
 
+import sk.borzik.Destinacia.Pamiatky;
+import sk.borzik.Destinacia.destinacia;
 import sk.borzik.Main;
 
 import javax.swing.*;
@@ -14,11 +16,14 @@ import sk.borzik.Pouzivatelia.Admin;
 import sk.borzik.Pouzivatelia.pouzivatel;
 
 public class Login_output extends JFrame {
-    private JTextPane text;
+    private JTextArea text;
     private JPanel panel1;
     private JButton zrusenieButton;
     private JButton nova_rezervacia;
     private JComboBox comboBox1;
+    private JButton zmena_pamiatky;
+    private JComboBox pamiatky_box;
+    private JButton vypis_pamiatky;
 
     public Login_output(String title, String login) throws HeadlessException{
         super(title);
@@ -41,7 +46,11 @@ public class Login_output extends JFrame {
             throw new RuntimeException(ex);
         }
         pouzivatel pouzivatel_pomocny= new pouzivatel(0,0,"","","","",null);
+        destinacia destinacia_pomocna= new destinacia(0,0,"",null);
         comboBox1= pouzivatel_pomocny.pridanie_moznosti(comboBox1,user);
+        destinacia_pomocna.vloz_rezervacie(pamiatky_box,user.getRezervacie());
+
+
 
         ZoberPouzivatela pouzivatel= new ZoberPouzivatela();
 
@@ -82,4 +91,25 @@ public class Login_output extends JFrame {
             }
         });
 
+        vypis_pamiatky.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Pamiatky pamiatka = new Pamiatky("");
+                pamiatka.vypis_pamiatky(text, pamiatky_box.getSelectedItem().toString(), finalUser1);
+            }
+        });
+
+        zmena_pamiatky.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Uprava_pamiatky menu4 = null;
+                try {
+                    menu4 = new Uprava_pamiatky("Uprava_pamiatky", finalUser, pamiatky_box.getSelectedItem().toString());
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                Main.mainContainer.add(menu4.getContentPane(), "Uprava_pamiatky");
+                Main.cardLayout.show(Main.mainContainer, "Uprava_pamiatky");
+            }
+        });
 }}

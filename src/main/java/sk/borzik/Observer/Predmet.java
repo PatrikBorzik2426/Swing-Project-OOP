@@ -6,7 +6,7 @@ public interface Predmet {
 
     public void pridajPozorovatela(Pozorovatel pozorovatel);
     public void odstranPozorovatela(Pozorovatel pozorovatel);
-    public void upozorniPozorovatelov(JTextPane textPane);
+    public void upozorniPozorovatelov(JTextArea textPane);
 
 
 
