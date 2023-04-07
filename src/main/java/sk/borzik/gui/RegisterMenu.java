@@ -20,14 +20,14 @@ public class RegisterMenu extends JFrame {
     private JTextField textrozpocet;
     private JLabel typ;
     private JComboBox dropdowntyp;
-    private JPanel Panel;
+    private JPanel panel;
     private JPasswordField textheslo;
     private JLabel heslo;
 
     public RegisterMenu(String title) throws HeadlessException {
         super(title);
 
-        setContentPane(Panel);
+        setContentPane(panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 

@@ -1,10 +1,7 @@
 package sk.borzik.gui;
 
-import sk.borzik.Destinacia.Dovolenka_rezorty;
 import sk.borzik.Main;
 import sk.borzik.Destinacia.destinacia;
-import sk.borzik.Pouzivatelia.Admin;
-import sk.borzik.Pouzivatelia.Rezervacie;
 import sk.borzik.Pouzivatelia.pouzivatel;
 import sk.borzik.Vozidla.vozidla;
 
@@ -14,10 +11,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.math.*;
 
 public class nova_rezervacia extends JFrame {
-    private JPanel formPanel;
+    private JPanel Panel;
     private JButton spat;
     private JButton rezervovat;
     private JComboBox destinacia_dropbox;
@@ -33,7 +29,7 @@ public class nova_rezervacia extends JFrame {
     public nova_rezervacia(String title,pouzivatel finalUser) throws HeadlessException, IOException {
         super(title);
 
-        setContentPane(formPanel);
+        setContentPane(Panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 

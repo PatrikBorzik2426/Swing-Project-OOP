@@ -24,7 +24,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        mainFrame = new JFrame("Nzov Tejto Cool Appky");
+        mainFrame = new JFrame("Mulitfunkčný plánovač");
         mainFrame.setSize(720, 720);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         cardLayout = new CardLayout();
