@@ -1,5 +1,6 @@
 package sk.borzik.gui;
 
+import sk.borzik.Main;
 import sk.borzik.Pouzivatelia.Admin;
 
 import javax.swing.*;
@@ -11,17 +12,18 @@ public class Admin_menu extends JFrame {
     private JButton vypis;
     private JButton potvrd;
     private JButton zamietnut;
-    private JPanel panel1;
+    private JPanel Panel;
     private JComboBox moznosti;
     private JTextArea textField;
     private JTextField login;
     private JTextField pridat_sumu;
     private JButton pridať€€€Button;
+    private JButton spat;
 
     public Admin_menu(String title) throws IOException, ClassNotFoundException {
         super(title);
 
-        setContentPane(panel1);
+        setContentPane(Panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 
@@ -80,6 +82,13 @@ public class Admin_menu extends JFrame {
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
+            }
+        });
+
+        spat.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.cardLayout.show(Main.mainContainer, "loginMenu");
             }
         });
 

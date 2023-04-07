@@ -1,18 +1,11 @@
 package sk.borzik.gui;
 
-import sk.borzik.Destinacia.destinacia;
-import sk.borzik.Main;
-import sk.borzik.Pouzivatelia.Dobrodruh;
-import sk.borzik.Pouzivatelia.Relax;
-import sk.borzik.Pouzivatelia.Student;
 import sk.borzik.Pouzivatelia.pouzivatel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class RegisterMenu extends JFrame {
 
@@ -27,14 +20,14 @@ public class RegisterMenu extends JFrame {
     private JTextField textrozpocet;
     private JLabel typ;
     private JComboBox dropdowntyp;
-    private JPanel formPanel;
+    private JPanel Panel;
     private JPasswordField textheslo;
     private JLabel heslo;
 
     public RegisterMenu(String title) throws HeadlessException {
         super(title);
 
-        setContentPane(formPanel);
+        setContentPane(Panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 

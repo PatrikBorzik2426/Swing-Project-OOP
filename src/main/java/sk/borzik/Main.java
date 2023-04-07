@@ -24,15 +24,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LoginMenu menu = new LoginMenu("Title neviem aky");
-        RegisterMenu menu2= new RegisterMenu("Novy crazy panel");
-
         mainFrame = new JFrame("Nzov Tejto Cool Appky");
         mainFrame.setSize(720, 720);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         cardLayout = new CardLayout();
         mainFrame.setLayout(cardLayout);
         mainContainer = mainFrame.getContentPane();
+
+        LoginMenu menu = new LoginMenu("Title neviem aky");
+        RegisterMenu menu2= new RegisterMenu("Novy crazy panel");
 
         mainContainer.add(menu.getContentPane(), "loginMenu");
         mainContainer.add(menu2.getContentPane(), "registerMenu");

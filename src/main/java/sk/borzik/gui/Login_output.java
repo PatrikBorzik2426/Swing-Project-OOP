@@ -17,7 +17,7 @@ import sk.borzik.Pouzivatelia.pouzivatel;
 
 public class Login_output extends JFrame {
     private JTextArea text;
-    private JPanel panel1;
+    private JPanel Panel;
     private JButton zrusenieButton;
     private JButton nova_rezervacia;
     private JComboBox comboBox1;
@@ -28,7 +28,7 @@ public class Login_output extends JFrame {
     public Login_output(String title, String login) throws HeadlessException{
         super(title);
 
-        setContentPane(panel1);
+        setContentPane(Panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 

@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class LoginMenu extends JFrame {
-    private JPanel formPanel;
+    private JPanel Panel;
     private JTextField Login_user;
     private JButton button_register;
     private JTextField Password_user;
@@ -20,7 +20,7 @@ public class LoginMenu extends JFrame {
     public LoginMenu(String title) throws HeadlessException{
         super(title);
 
-        setContentPane(formPanel);
+        setContentPane(Panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 

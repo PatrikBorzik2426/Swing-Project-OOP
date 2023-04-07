@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class Uprava_pamiatky extends JFrame {
-    private JPanel panel1;
+    private JPanel Panel;
       private JTextField pamiatka_pridanie_text;
     private JButton pamiatka_pridanie_button;
     private JComboBox vsetky_pamiatky;
@@ -23,7 +23,7 @@ public class Uprava_pamiatky extends JFrame {
     public Uprava_pamiatky(String title, pouzivatel finalUser, String vyber) throws HeadlessException, IOException {
         super(title);
 
-        setContentPane(panel1);
+        setContentPane(Panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(720, 720);
 
